@@ -183,3 +183,129 @@ console.log(toCamelCase("snake_long_hi"))
 // pigLatin(“Cats are great pets.“) ➞ “Atscay areway reatgay etspay.”
 // pigLatin(“Tom got a small piece of pie.“) ➞ “Omtay otgay away allsmay iecepay ofway iepay.”
 // pigLatin(“He told us a very exciting tale.“) ➞ “Ehay oldtay usway away eryvay excitingway aletay.”
+
+function pigLatin(str) {
+  let translation = [];
+  const vowels = ["a","e","i","o","u",]
+  let lowerCase = str.toLowerCase();
+  let splitStr = lowerCase.split(" ");  ///first 4 lines default in any string function 
+  console.log(splitStr + "  = This is split array");
+  for (let i = 0; i < splitStr.length; i++) {
+    // i = 1   splitStr = that
+    let firstChr = splitStr[i][0]; // b anana
+    console.log(firstChr + " = first character") // anana
+    let remainder = splitStr[i].slice(1, splitStr[i].length); //hat
+    console.log(remainder + " = remainder")
+    if(vowels.includes(firstChr)){
+      const firstChrVal = (i ? firstChr : firstChr.toUpperCase() + remainder + 'way');
+      translation.push(firstChrVal);
+    }else{
+      if (i == 0 ){
+      let firstChrRem = remainder[0];
+      let wordRemainder = remainder.slice(1, remainder.length);
+      remainder = firstChrRem.toUpperCase() + wordRemainder;
+    }
+  }
+    const newString = remainder + firstChr + "ay";
+    // hat + z + ay
+    translation.push(newString);
+    console.log(translation);
+  }
+  let result = translation.join(" ");
+  return result;
+}
+const strPig = "Cats are great pets.";
+console.log(pigLatin(strPig));
+
+
+// 1. Multiply - Function Declaration
+// Create a function that multiples a number by another number.
+
+function multiplication (a, b){
+  return a*b;
+
+}
+console.log(multiplication(10,20));
+
+// 2. Multiply - Function Declarations as Values
+// Rework the syntax of the above function so that the function declaration is stored as a value.
+
+const multi = function (a, b){
+  let multi = a*b;
+  return multi;
+
+}
+console.log(multi(10,20));
+// 3. Multiply - Arrow Function
+// Rework the syntax of the function declaration so that is uses the arrow function shorthand.
+const multiplu = (a,b)=> a*b;
+  
+console.log(multiplu(10,20));
+
+// 4. Declarations
+// Create functions (using all three declarations) to check the remainder of division given two numbers.
+const divide = (a,b)=>{
+  let div = a%b;
+  return div;
+}
+console.log(divide(20,11));
+
+const div = function (a,b){ 
+  return a%b;
+}
+console.log(divide(20,11));
+
+function divNum(a,b){
+  console.log(a%b);
+}
+divNum(20,11);
+
+
+// Print Exponential Values
+// Write a function that accepts two numbers and validate that they are numbers.
+// After that, the function should print y exponential values starting from x.
+// For example if we have function(3, 5) The function should print 3 9 27 81 243. Prints 5 exponential values of 3.
+// function(2, 8) The function prints 2 4 8 16 32 64 128 256. Prints 8 exponential values of 2.
+
+function number(num1, num2){
+  if(typeof num1 !=='number' && typeof num2 !=='number'){
+    console.log("This is not a number")
+  }else{
+    let powerNumber = 1;
+    let answer = "";
+    for(let i = 1; i<=num2; i++){
+      powerNumber = powerNumber * num1;
+      answer = answer + " " + powerNumber;
+    }
+    console.log(answer);
+  }
+  
+}
+number(3,5);
+number(2,8);
+
+// 2. Fruits
+// Create a function named printFavoriteFruit. Declare a variable outside of the function and store your favorite 
+// fruit as a value. Reassign the variable within the function and print “My favorite fruit is: x”.
+
+let favoriteFruit = "cherry";
+function printFavouriteFruit(){
+  favoriteFruit = "pineapple";
+  console.log("My favourite fruit is" + " " + favoriteFruit);
+
+}
+printFavouriteFruit();
+
+
+
+// 3. Multiply a Number by Itself
+// Create a function named exponent that takes two numbers as parameters. The second parameter defines how many 
+// times the first number should be multiplied by itself. Save the output in a variable named result.
+// Then, try to access the variable result outside of the exponent function. Is this possible? Why/Why not? 
+// Comment your answer in the index.js file.
+
+function exponent(x, y){
+  console.log(Math.pow(x,y))
+}
+
+exponent(2,4);  //not possible because x and Y are not defined outside of the function ;
