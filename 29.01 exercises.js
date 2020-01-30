@@ -80,9 +80,9 @@ stringSplit = num.toLowerCase().split(" "); // split the string
 function bankAccount(str){
 //console.log(str[0]);
 //console.log(str.length);
-let strToNum = str.slice(2);
+let strToNum = str.slice(2); //the remainder from index 2 on
 //console.log(strToNum);
-const isNotNumber = isNaN(strToNum);
+const isNotNumber = isNaN(strToNum);// is the remainder a number?
 
 if(str[0] === "D" && str[1] ==="E" && str.length === 20 && !isNotNumber){
     console.log("This is a valid german bank account")

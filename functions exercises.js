@@ -127,8 +127,8 @@ console.log(hacking(codeStr));
 
 
 function isSymmetrical (num){
-  let numToStr = num.toString();
-  let result = numToStr.split("")
+  let numToStr = num.toString(); //"7227"
+  let result = numToStr.split("") // [7, 2, 2, 7 ]
   .reverse()
   .join('');
   if(numToStr=== result){

@@ -6,13 +6,11 @@ function string(str){
         console.log("False");
     }
 }
-
 string("JavaScript");
 
 // Create a function that calculates the user age e.g. 2000 -> 20.
 function age(number){
-let date = new Date();
-let currentYear = date.getFullYear();
+let currentYear = new Date().getFullYear();;
 let result = currentYear-number;
 console.log(result);
 }
@@ -109,12 +107,8 @@ const twofer = (who ="you") => {
   // Example: Calling the function with 2 and 4 will return 16 (2 to the power of 4), If you call it with just 2, 
   // it should return 4 (2 to the power of 2).
   
-  const exponent = (num, exp) => {
-    let result = 1;
-    if(typeof exp === "undefined" ){
-        exp = 2;
- }
-  
+  const exponent = (num, exp = 2) => {
+    let result = 1;  
     for (let i = 0; i < exp; i++) {
       result *= num;
     }
@@ -136,18 +130,18 @@ const twofer = (who ="you") => {
   function degree(...num){
       let total =0;
       for(let i = 0; i < num.length; i++) {
-          total += num[i];}
-         let result = total / num.length;
+          total += num[i];
+        } let result = total / num.length;
         if(result === 70){
-        console.log("F");
+        console.log(`For ${result} points you get a F`);
       }else if(result > 70 && result<80){
-        console.log("C");
-      }else if(result > 80 && result<85){
-        console.log("B");
-      }else if(result > 85 && result<90){
-        console.log("A");
-      }else if(result > 90){
-        console.log("A+");
+        console.log(`For ${result} points you get a C`);
+      }else if(result >= 80 && result<85){
+        console.log(`For ${result} points you get a B`);
+      }else if(result >= 85 && result<90){
+        console.log(`For ${result} points you get an A`);
+      }else if(result >= 90){
+        console.log(`For ${result} points you get a A+`);
       }else{
           console.log("You failed");
       }
@@ -307,7 +301,8 @@ if(!str.includes("@") && !str.includes(".")){
     console.log("This is not a valid e-mail");
 }else if(str.indexOf("@") <= str.indexOf(".")){
     console.log("This is not a valid e-mail")
-
+}else if(str.indexOf("@") === -3 || str.indexOf("@") === -4){
+    console.log("This is not a valid e-mail")
 }else{
     console.log(true);
 }
