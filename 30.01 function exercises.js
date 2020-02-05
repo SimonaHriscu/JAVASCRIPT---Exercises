@@ -1,4 +1,4 @@
-/*
+
 // Create a function that receive a text from user and check if the user has entered a phone number, and print that out
 // Note : phone number should be within the German network starts with (030,017) and has 7 digits after the prefix number
 
@@ -31,7 +31,6 @@ phoneNumber("This is a message from 0300123456");
 phoneNumber("This is a message from 0171zz2555");
 phoneNumber("This is a message from 011v678435");
 
-*/
 
 //Improved version with loop
 
@@ -47,7 +46,6 @@ function phoneNumber(str) {
 
   // let result = "";
 
-  
   for (let i = 0; i < splitStr.length; i++) {
     let counter = 0;
     //    console.log(splitStr[i]);
@@ -61,23 +59,19 @@ function phoneNumber(str) {
       //         if(remainderNumber.length === 7 && !isNotNumber ){
       //            return (`The number is a valid german phone number`);
       counter++;
-      
+
       //         }
       //     }else{
       //             return `The number is not a valid german phone number`
-    } 
-    if (counter== 1) {
-        console.log("if counter", counter);
     }
-    else {
-        console.log(counter)
+    if (counter == 1) {
+      console.log("if counter", counter);
+    } else {
+      console.log(counter);
 
-        return `This is no phone number`;
-
-      }
+      return `This is no phone number`;
+    }
   }
-  
-  
 }
 console.log(phoneNumber("0300123456 message from "));
 // console.log(phoneNumber("0300123456 send you a message"));
