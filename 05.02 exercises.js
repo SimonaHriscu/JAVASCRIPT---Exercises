@@ -125,7 +125,7 @@ function zodiac(name, day, month, year) {
     birthDay: parseInt(day),
     birthMonth: parseInt(month),
     birthYear: parseInt(year),
-    output: function() {
+    yourZodiac: function() {
         const zodiacSigns = {
             capricorn : "19",
             aquarius : "18",
@@ -141,22 +141,24 @@ function zodiac(name, day, month, year) {
             sagittarius : "20"
             
         }; 
+        let arr = Object.entries(zodiacSigns);
+        let lastDay = Object.values(zodiacSigns)
+        console.log(lastDay);
+        console.log(arr)
         
-        let months = Object.values(zodiacSigns);
-        
-        // if (this.birthDay > months) {
-        //     return Object.keys(zodiacSigns);
-        // } else {
-        //   return (Object.keys(zodiacSigns) - 1);
-        // }
-     
-       
+       for(let i=0; i<arr.length; i++){
+          if (this.birthMonth == arr[i]) {
+            if(this.birthDay >= lastDay) {
+             return Object.keys(zodiacSigns);
+         } 
+        }
+           return (Object.keys(zodiacSigns) - 1); 
+       }  
     }
-  };
-
-  return result;
+  }
+  return result.yourZodiac();
 }
-zodiac("Simona", "22", "06", "1991");
+console.log(zodiac("Simona", "22", "06", "1991"));
 
 
 const school = new Object(); 
