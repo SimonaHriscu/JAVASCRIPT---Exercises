@@ -271,9 +271,9 @@ const XO = (str) => {
         }
     }
     if (countO === countX) {
-        return true
-    } else {
-        return false
+        return true;
+    } else if(countO !== countX){
+        return false;
     }
 
 
